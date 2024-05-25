@@ -20,8 +20,6 @@ public class CEO extends Departamento {
     }
 
     public void mostrarInformacion(){
-        for(Departamento deptPrincipal: principales){
-            deptPrincipal.mostrarInformacion();
-        }
+        super.mostrarInformacion();
     }
 }

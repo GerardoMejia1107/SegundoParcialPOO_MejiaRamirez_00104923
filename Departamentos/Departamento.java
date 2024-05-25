@@ -1,8 +1,11 @@
 package Departamentos;
 
+import java.util.ArrayList;
+
 public abstract class Departamento {
     private String nombre;
     private int ID;
+    private ArrayList<Departamento> subDepartamentos;
 
     public Departamento() {
     }
@@ -29,10 +32,20 @@ public abstract class Departamento {
     }
 
     //Metodo mostrar
+
+
+
+    public void agregarDeptPincipal(Departamento secundario){
+        this.subDepartamentos.add(secundario);
+    }
+
+    public void removerPrincipal(Departamento secundario){
+        this.subDepartamentos.remove(secundario);
+    }
+
     public void mostrarInformacion(){
-        System.out.println(
-                "Nombre: "  + this.getNombre()+ "\n"+
-                        "ID: " + this.getID()
-        );
+        for(Departamento dept: subDepartamentos){
+            "Nombre: "  + this.getNombre()
+        }
     }
 }
